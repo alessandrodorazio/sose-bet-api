@@ -1,4 +1,5 @@
 package it.univaq.aggm;
+import javax.jws.WebService;
 import javax.ws.rs.*;
 
 
@@ -12,7 +13,8 @@ import java.util.Collection;
 
 @Path("bets")
 @Produces("text/xml")
-public class BetRepository {
+@WebService(endpointInterface = "it.univaq.aggm.BetRepositoryInterface")
+public class BetRepository implements BetRepositoryInterface {
 	@GET
     @Path("match")
     public Bet calculateBet(@QueryParam("localTeam") int localTeamId, @QueryParam("visitorTeam") int visitorTeamId)  {
