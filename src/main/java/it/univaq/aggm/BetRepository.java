@@ -16,7 +16,7 @@ import java.util.Collection;
 @WebService(endpointInterface = "it.univaq.aggm.BetRepositoryInterface")
 public class BetRepository implements BetRepositoryInterface {
 	@GET
-    @Path("match")
+    @Path("calculate")
     public Bet calculateBet(@QueryParam("localTeam") int localTeamId, @QueryParam("visitorTeam") int visitorTeamId)  {
 		Bet b = new Bet();
 		b.setLocalTeamId(localTeamId);
