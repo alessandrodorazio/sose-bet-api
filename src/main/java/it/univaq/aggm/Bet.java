@@ -8,7 +8,16 @@ public class Bet {
 	private double localTeamQuote;
 	private int visitorTeamId;
 	private double visitorTeamQuote;
+	private double tieQuote;
 	
+	public double getTieQuote() {
+		return tieQuote;
+	}
+
+	public void setTieQuote(double tieQuote) {
+		this.tieQuote = tieQuote;
+	}
+
 	public void setLocalTeamId(int id) {
 		this.localTeamId = id;
 	}
@@ -44,5 +53,6 @@ public class Bet {
 	public void calculateQuote() {
 		this.setLocalTeamQuote(1+(Math.ceil((Math.random() * (5-1))*100))/100 );
 		this.setVisitorTeamQuote(1+(Math.ceil((Math.random() * (5-1))*100))/100 );
+		this.setTieQuote(1+(Math.ceil((Math.random() * (5-1))*100))/100 );
 	}
 }
