@@ -15,6 +15,7 @@ public class StartService {
 		// TODO Auto-generated method stub
 		startRest();
         startSoap();
+        System.out.println("bet");
 	}
 	
 	public static void startRest() {
