@@ -22,7 +22,7 @@ public class StartService {
 		JAXRSServerFactoryBean factoryBean = new JAXRSServerFactoryBean();
         factoryBean.setResourceClasses(BetRepository.class);
         factoryBean.setResourceProvider(new SingletonResourceProvider(new BetRepository()));
-        factoryBean.setAddress("http://localhost:8082/");
+        factoryBean.setAddress("http://0.0.0.0:8082/");
         Server server = factoryBean.create();
         System.out.println("REST server ready...");
 	}
