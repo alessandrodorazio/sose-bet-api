@@ -3,6 +3,7 @@ package it.univaq.aggm;
 import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "Bet")
+
 public class Bet {
 	private int localTeamId;
 	private double localTeamQuote;
@@ -18,6 +19,16 @@ public class Bet {
 		this.tieQuote = tieQuote;
 	}
 
+	public Bet() {
+		
+	}
+	
+	public Bet(int localTeamId, int visitorTeamId) {
+		this.localTeamId = localTeamId;
+		this.visitorTeamId = visitorTeamId;
+		this.calculateQuote();
+	}
+	
 	public void setLocalTeamId(int id) {
 		this.localTeamId = id;
 	}
@@ -51,6 +62,7 @@ public class Bet {
 	}
 	
 	public void calculateQuote() {
+		// generate random quotes for each team 
 		this.setLocalTeamQuote(1+(Math.ceil((Math.random() * (5-1))*100))/100 );
 		this.setVisitorTeamQuote(1+(Math.ceil((Math.random() * (5-1))*100))/100 );
 		this.setTieQuote(1+(Math.ceil((Math.random() * (5-1))*100))/100 );
