@@ -29,10 +29,7 @@ public class StartServiceBetApi {
 	}
 	
 	public static void startSoap(String soapAddress) {
-		Endpoint ep = Endpoint.create(new BetRepository());
-		List<Handler> handlerChain = ep.getBinding().getHandlerChain();
-		ep.getBinding().setHandlerChain(handlerChain);
-		ep.publish(soapAddress);
+		Endpoint.publish(soapAddress, new BetRepository());
 		System.out.println("SOAP server ready...");
 	}
 
