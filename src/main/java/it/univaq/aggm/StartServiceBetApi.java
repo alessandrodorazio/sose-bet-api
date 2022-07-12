@@ -13,8 +13,8 @@ public class StartServiceBetApi {
 
 	public static void main(String[] args) {
 
-		String restAddress = "http://localhost:8082/";
-		String soapAddress = "http://localhost:8083/bet";
+		String restAddress = "http://0.0.0.0:8082/";
+		String soapAddress = "http://0.0.0.0:8092/bet";
 		startRest(restAddress);
         startSoap(soapAddress);
 	}
